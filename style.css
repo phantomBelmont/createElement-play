@@ -1,8 +1,23 @@
 html { 
-      background:#333; 
+      background:#333;
+      font-size: 2rem;
       }
-    badge {   
+badge {   
       background:#555; 
       border-radius:50px; 
       display:inline-block;
+    }
+    #btn{
+          width: auto;
+          padding:10px;
+          transition:0.1s;
+          font-size: 1rem;
+          border-radius: 10px;
+          background: #777;
+          color: #000;
+          transition:font-size 0.1s, transform 0.1s;
+    }
+    #btn:active{
+          transform:scale(0.9) translateY(2px) ;
+          font-size:30px;
     }
