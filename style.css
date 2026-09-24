@@ -9,7 +9,7 @@ badge {
     }
     #btn{
           width: auto;
-          padding:10px;
+          padding:10px 15px;
           transition:0.1s;
           font-size: 1rem;
           border-radius: 10px;
@@ -17,6 +17,7 @@ badge {
           color: #000;
           transition:font-size 0.1s, transform 0.1s;
     }
+
     #btn:active{
           transform:scale(0.9) translateY(2px) ;
           font-size:30px;
