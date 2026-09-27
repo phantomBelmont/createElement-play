@@ -2,12 +2,21 @@ html {
       background:#333;
       font-size: 2rem;
       }
-badge {   
+body{
+      color:#aa0;
+}
+#List{
+      display:flex;
+      flex-wrap:wrap;
+}
+#List div {   
+      display:flex;
       background:#555; 
       border-radius:50px; 
-      display:inline-block;
     }
-    #btn{
+    
+    /*ボタンの押し心地など*/
+    .nicePush{
           width: auto;
           padding:10px 15px;
           transition:0.1s;
@@ -17,8 +26,23 @@ badge {
           color: #000;
           transition:font-size 0.1s, transform 0.1s;
     }
-
-    #btn:active{
+    .nicePush:active{
           transform:scale(0.9) translateY(2px) ;
           font-size:30px;
+    }
+    
+    
+   /*単語カード*/
+    #stage{
+          list-style: none;
+    }
+    .firstSight{
+          background:#030;
+    }
+   #stage li{
+          display:inline-block;
+          padding:10px 5px;
+          margin:5px;
+          color:#aa0;
+          border-radius:10px;
     }
