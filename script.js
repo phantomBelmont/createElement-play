@@ -1,13 +1,49 @@
+
 //😺😺😺
 const catBtn=document.getElementById('catBtn');
-const List=document.getElementById('List');
+const cathomeBtn=document.getElementById('cathomeBtn');
+const catStage=document.getElementById('catStage');
+
+function clearStage(stageName){
+  while (stageName.firstChild) {
+  stageName.removeChild(stageName.firstChild);
+}
+}//clearStage
+
 
 catBtn.addEventListener('click',()=>{
   const catDIV=document.createElement('div');
   catDIV.textContent='😺😺😺';
-  List.appendChild(catDIV);
+
+
+  catDIV.addEventListener('dblclick',()=>{
+    const isFlipped = catDIV.classList.toggle('flipped');
+    
+    catDIV.textContent = isFlipped ? '💤💤💤':
+      '😺😺😺';
+  });//catDIV dblclick Event
+  
+  catStage.appendChild(catDIV);
 }
-);//Event
+);//catBtn Event
+
+cathomeBtn.addEventListener('click',()=>{
+  
+[...catStage.children].forEach(c => 
+c.classList.add('fade-out')
+);//forEach
+  
+  setTimeout(()=>{
+    [...catStage.children].forEach(ca =>ca.textContent = '🏡🏡🏡'
+      
+    );//forEach
+  },700);//setTimeout
+  
+  setTimeout(()=>{
+    clearStage(catStage);
+  },2000);//setTimeout
+});//cathomeBtn Event
+
 
 
 //単語カード
@@ -16,8 +52,13 @@ const GerBtn=document.getElementById('GerBtn');
 const SpaBtn=document.getElementById('SpaBtn');
 const ItaBtn=document.getElementById('ItaBtn');
 const createBtn=document.getElementById('createBtn');
-const STAGE=document.getElementById('stage');
+const wordsStage=document.getElementById('wordsStage');
 const langStatus=document.getElementById('langStatus');
+const delBtn=document.getElementById('delBtn');
+const showAllBtn = document.getElementById('showAllBtn');
+
+
+
 
 const French = [
   // --- 動物・生き物 ---
@@ -373,41 +414,36 @@ const Italian = [
 
 
 
-let Lang = French;
+let langArray = French;
 let shuffledArray =[];
 let currentIndex=0;
 langStatus.textContent='French';
 
+
+function switchLang(arrayName,langName){
+  langArray = arrayName;
+  langStatus.textContent = langName;
+  shuffledArray = [];
+  clearStage(wordsStage);
+}//switchLang
 FrBtn.addEventListener(
   'click',()=>{
-    Lang=French;
-    langStatus.textContent='French';
-    shuffledArray =[];
-    STAGE.innerHTML='';
+    switchLang(French, 'French');
   });//FrBtn Event
 
 GerBtn.addEventListener(
   'click',()=>{
-    Lang=German;
-    langStatus.textContent='German';
-    shuffledArray =[];
-    STAGE.innerHTML='';
+    switchLang(German,'German');
   });//GerBtn Event
   
 SpaBtn.addEventListener(
   'click',()=>{
-    Lang=Spanish;
-    langStatus.textContent='Spanish';
-    shuffledArray =[];
-    STAGE.innerHTML='';
+    switchLang(Spanish,'Spanish');
   });//SpaBtn Event
   
   ItaBtn.addEventListener(
   'click', () => {
-    Lang = Italian;
-    langStatus.textContent = 'Italian';
-    shuffledArray = [];
-    STAGE.innerHTML = '';
+    switchLang(Italian,'Italian');
   }); //ItaBtn Event
 
 
@@ -427,9 +463,9 @@ function ShuffleArr(array){
 
 createBtn.addEventListener(
   'click',()=>{
-  
+
   if(shuffledArray.length===0 || currentIndex>=shuffledArray.length){
-    shuffledArray=ShuffleArr(Lang);
+    shuffledArray=ShuffleArr(langArray);
     currentIndex=-1;
   }//if
   
@@ -438,25 +474,54 @@ createBtn.addEventListener(
   const OBJset=shuffledArray[currentIndex];
   const li=document.createElement('li');
     li.textContent=OBJset.front;
-    li.className='firstSight';
-    
-    let flipped = false;
+    li.classList.add('firstSight');
     
     li.addEventListener('click',()=>{
-      flipped = !flipped;
       
-      li.textContent=flipped?
+     const isFlipped = li.classList.toggle('flipped');
+      
+      li.textContent = isFlipped?
       OBJset.back:
       OBJset.front;
       
-      li.style.backgroundColor=flipped ?
+      li.style.backgroundColor = isFlipped ?
       '#300':
       '#300';
   });//li click Event
   
-  STAGE.appendChild(li);
+  wordsStage.appendChild(li);
   
 });//createBtn click Event
 
 
+
+delBtn.addEventListener('click',()=>{
+  clearStage(wordsStage);
+});//delBtn Event
     
+showAllBtn.addEventListener('click',()=>{
+  clearStage(wordsStage);
+  
+  shuffledArray = ShuffleArr(langArray);
+  
+shuffledArray.forEach(OBJset => {
+
+const li = document.createElement('li');
+li.textContent = OBJset.front;
+li.classList.add('firstSight');
+
+li.addEventListener('click', () => {
+      
+      const isFlipped = li.classList.toggle('flipped');
+      
+      li.textContent = isFlipped ?
+        OBJset.back :
+        OBJset.front;
+      
+      li.style.backgroundColor = isFlipped ?
+        '#300' :
+        '#300';
+});//li Event
+  wordsStage.appendChild(li);
+});//forEach
+});//showAllBtn Event
