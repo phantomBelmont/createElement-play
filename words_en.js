@@ -1,12 +1,6 @@
 window.English = [
   // --- 動物・生き物 (Animals) ---
-  { front: '🐺', back: 'wolf' },
-  { front: '🦊', back: 'fox' },
-  { front: '🐯', back: 'tiger' },
-  { front: '🦁', back: 'lion' },
-  { front: '🦇', back: 'bat' },
-  { front: '🐵', back: 'monkey' },
-  { front: '🦉', back: 'owl' },
+  
   { front: '🐢', back: 'turtle' },
   { front: '🐻‍❄️', back: 'polar bear' },
   { front: '🐨', back: 'koala' },
