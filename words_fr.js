@@ -103,7 +103,7 @@ window.French = [
   { front: '🪿', back: 'l’oie' },
   { front: '🐦‍🔥', back: 'le phénix' },
   { front: '🐧', back: 'le manchot' },
-  { front: '🫍', back: 'l’organisme marin' }, // もしくは微調整用のプレースホルダー等
+  { front: '🫍', back: 'l’organisme marin' }, 
   { front: '🐠', back: 'le poisson tropical' },
   { front: '🐡', back: 'le poisson-globe' },
   { front: '🦪', back: 'l’huître' },
