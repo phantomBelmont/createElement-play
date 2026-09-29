@@ -47,6 +47,7 @@ c.classList.add('fade-out')
 
 
 //単語カード
+const EnBtn=document.getElementById('EnBtn');
 const FrBtn=document.getElementById('FrBtn');
 const GerBtn=document.getElementById('GerBtn');
 const SpaBtn=document.getElementById('SpaBtn');
@@ -60,10 +61,10 @@ const showAllBtn = document.getElementById('showAllBtn');
 
 
 
-let langArray = French;
+let langArray = English;
 let shuffledArray =[];
 let currentIndex=0;
-langStatus.textContent='French';
+langStatus.textContent='English';
 
 
 function switchLang(arrayName,langName){
@@ -72,6 +73,12 @@ function switchLang(arrayName,langName){
   shuffledArray = [];
   clearStage(wordsStage);
 }//switchLang
+
+EnBtn.addEventListener(
+  'click', () => {
+    switchLang(English, 'English');
+  }); //EnBtn Event
+  
 FrBtn.addEventListener(
   'click',()=>{
     switchLang(French, 'French');
