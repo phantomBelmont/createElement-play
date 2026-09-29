@@ -1211,7 +1211,7 @@ window.French = [
   { front: '🤱🏻', back: 'l’allaitement' },
   { front: '👩🏻‍🍼', back: 'la femme nourrissant un bébé' },
 
-//---
+//--- 記号・シンボル・アイコン (Symboles & Signes & Icônes) ---
   { front: '🔴', back: 'le cercle rouge' },
   { front: '🟠', back: 'le cercle orange' },
   { front: '🟡', back: 'le cercle jaune' },
