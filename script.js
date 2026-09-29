@@ -1,8 +1,8 @@
 
 //😺😺😺
-const catBtn=document.getElementById('catBtn');
-const cathomeBtn=document.getElementById('cathomeBtn');
-const catStage=document.getElementById('catStage');
+window.catBtn=document.getElementById('catBtn');
+window.cathomeBtn=document.getElementById('cathomeBtn');
+window.catStage=document.getElementById('catStage');
 
 function clearStage(stageName){
   while (stageName.firstChild) {
@@ -47,16 +47,16 @@ c.classList.add('fade-out')
 
 
 //単語カード
-const EnBtn=document.getElementById('EnBtn');
-const FrBtn=document.getElementById('FrBtn');
-const GerBtn=document.getElementById('GerBtn');
-const SpaBtn=document.getElementById('SpaBtn');
-const ItaBtn=document.getElementById('ItaBtn');
-const createBtn=document.getElementById('createBtn');
-const wordsStage=document.getElementById('wordsStage');
-const langStatus=document.getElementById('langStatus');
-const delBtn=document.getElementById('delBtn');
-const showAllBtn = document.getElementById('showAllBtn');
+window.EnBtn=document.getElementById('EnBtn');
+window.FrBtn=document.getElementById('FrBtn');
+window.GerBtn=document.getElementById('GerBtn');
+window.SpaBtn=document.getElementById('SpaBtn');
+window.ItaBtn=document.getElementById('ItaBtn');
+window.createBtn=document.getElementById('createBtn');
+window.wordsStage=document.getElementById('wordsStage');
+window.langStatus=document.getElementById('langStatus');
+window.delBtn=document.getElementById('delBtn');
+window.showAllBtn = document.getElementById('showAllBtn');
 
 
 
@@ -159,11 +159,11 @@ showAllBtn.addEventListener('click',()=>{
   
 shuffledArray.forEach(OBJset => {
 
-const li = document.createElement('li');
-li.textContent = OBJset.front;
-li.classList.add('firstSight');
-
-li.addEventListener('click', () => {
+  const li = document.createElement('li');
+  li.textContent = OBJset.front;
+  li.classList.add('firstSight');
+  
+  li.addEventListener('click', () => {
       
       const isFlipped = li.classList.toggle('flipped');
       
