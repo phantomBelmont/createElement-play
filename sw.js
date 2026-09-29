@@ -1,7 +1,8 @@
-const createCACHE = 'v11';
+const createCACHE = 'v12';
 const ASSETS = [
   './',
   './index.html',
+  './words_en.js',
   './words_fr.js',
   './words_ger.js',
   './words_spa.js',
