@@ -1128,7 +1128,7 @@
   { front: '🧝🏻‍♀️', back: 'female elf' },
   { front: '🧙🏻‍♀️', back: 'witch' },
   { front: '🧛🏻‍♀️', back: 'female vampire' },
-  { front: '🧟‍♀️', female: 'female zombie', back: 'female zombie' },
+  { front: '🧟‍♀️', back: 'female zombie' },
   { front: '🧌', back: 'troll' },
   { front: '🫈', back: 'person with crown' },
   { front: '🦸🏻‍♀️', back: 'female superhero' },
