@@ -1,9 +1,9 @@
-const createCACHE = 'v20';
+const createCACHE = 'v21';
 const ASSETS = [
   './',
   './index.html',
   './words_en.js',
-  './words_fr.js',
+  './words_dra.js',
   './words_ger.js',
   './words_spa.js',
   './words_ita.js',
