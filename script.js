@@ -58,7 +58,7 @@ c.classList.add('fade-out')
 
 //単語カード
 window.EnBtn=document.getElementById('EnBtn');
-window.FrBtn=document.getElementById('FrBtn');
+window.DraBtn=document.getElementById('DraBtn');
 window.GerBtn=document.getElementById('GerBtn');
 window.SpaBtn=document.getElementById('SpaBtn');
 window.ItaBtn=document.getElementById('ItaBtn');
@@ -89,10 +89,10 @@ EnBtn.addEventListener(
     switchLang(English, 'English');
   }); //EnBtn Event
 
-FrBtn.addEventListener(
+DraBtn.addEventListener(
   'click',()=>{
-    switchLang(French, 'French');
-  });//FrBtn Event
+    switchLang(Dracula, 'Dracula');
+  });//DraBtn Event
 
 GerBtn.addEventListener(
   'click',()=>{
@@ -127,13 +127,13 @@ function ShuffleArr(array){
 createBtn.addEventListener(
   'click',()=>{
   currentIndex++;
-  
+
   if(shuffledArray.length===0 || currentIndex===shuffledArray.length){
     shuffledArray = ShuffleArr(langArray);
     currentIndex = 0;
   }//if
 
-  
+
 
   const OBJset=shuffledArray[currentIndex];
   const li=document.createElement('li');
