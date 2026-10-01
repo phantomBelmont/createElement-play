@@ -189,3 +189,9 @@ shuffledArray.forEach(OBJset => {
   wordsStage.appendChild(li);
 });//forEach
 });//showAllBtn Event
+
+function syncSpinner() {
+  document.body.classList.toggle('is-visible', !document.hidden);
+}
+syncSpinner(); // ← 初回も必ず呼ぶ
+document.addEventListener('visibilitychange', syncSpinner);
