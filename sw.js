@@ -1,4 +1,4 @@
-const createCACHE = 'v21';
+const createCACHE = 'v22';
 const ASSETS = [
   './',
   './index.html',
