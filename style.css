@@ -1,9 +1,90 @@
 html { 
       background:#111;
       }
-body{
-      color:#aa0;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+-webkit-tap-highlight-color: transparent;
 }
+
+html{
+      height:100svh;
+      width:100%;
+      background:#000;
+      margin:0;
+      padding:0;
+      overflow:hidden;
+}
+body{
+      height:100%;
+      width:100%;
+      background:transparent;
+      color:#aa0;
+      overflow-x:hidden;
+}
+
+    /*ボタンの押し心地など*/
+    .nicePush{
+          width: auto;
+          padding:5px 10px;
+          transition:0.1s;
+          font-size: 1rem;
+          font-weight :600;
+          border-radius: 10px;
+          background: #777;
+          color: #000;
+          transition:font-size 0.1s, transform 0.1s;
+          z-index:50;
+    }
+    .nicePush:active{
+         
+          transform:scale(0.9) translateY(2px) ;
+          font-size:15px;
+    }
+    
+    
+    
+.spinner-back{
+      position:fixed;
+      
+      inset:0;
+      background:transparent;
+      z-index:0;
+      pointer-events:none;
+}
+.spinner{
+      position:absolute;
+      display:flex;
+      
+      top:50%;
+      left:50%;
+      translate:-50% -50%;
+      height:300px;
+      width:200px;
+      font-size:2rem;
+      border-radius:50%;
+      animation: spin 10s linear infinite;
+      animation-play-state:paused;
+}
+@keyframes spin{
+      to{transform:rotate(360deg);}
+}
+body.is-visible .spinner{ animation-play-state:running; 
+      
+}
+@media (prefers-reduced-motion: reduce){
+  .spinner{ animation:none; }
+}
+
+.all-games{
+      position:relative;
+      height:100svh;
+      width:100%;
+      z-index:10;
+      background:transparent;
+}
+
 #catStage{
       display:flex;
       flex-wrap:wrap;
@@ -21,41 +102,36 @@ body{
           transform:translateY(10px);
     }
     
-    /*ボタンの押し心地など*/
-    .nicePush{
-          width: auto;
-          padding:5px 10px;
-          transition:0.1s;
-          font-size: 1rem;
-          font-weight :600;
-          border-radius: 10px;
-          background: #777;
-          color: #000;
-          transition:font-size 0.1s, transform 0.1s;
-    }
-    .nicePush:active{
-          transform:scale(0.9) translateY(2px) ;
-          font-size:15px;
-    }
-    
+
     
    /*単語カード*/
+   .flashcards-containe{
+         
+   }
    #delBtn{
          color:#900;
    }
     #wordsStage{
-          list-style: none;
+          
     }
     .firstSight{
           background:#030;
     }
    #wordsStage li{
-          display:inline-block;
+          display:flex;
+          flex-direction:column;
+          justify-content:space-between;
+          align-items:center;
           padding:10px 5px;
           margin:5px;
           font-size:2rem;
           color:#aa0;
           border-radius:10px;
+          list-style: none;
+          
+    }
+    #wordsStage li:active{
+          border-color:#770;
     }
     
     .stickyBar{
