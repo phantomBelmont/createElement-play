@@ -149,8 +149,12 @@ createBtn.addEventListener(
       OBJset.front;
 
       li.style.backgroundColor = isFlipped ?
-      '#300':
-      '#300';
+      '#200':
+      '#020';
+      
+      li.style.border = isFlipped ? 'solid':'solid';
+      
+      li.style.borderColor = isFlipped ? '#500':'#050';
   });//li click Event
 
   wordsStage.appendChild(li);
@@ -184,7 +188,9 @@ shuffledArray.forEach(OBJset => {
 
       li.style.backgroundColor = isFlipped ?
         '#300' :
-        '#300';
+        '#030';
+        
+        
 });//li Event
   wordsStage.appendChild(li);
 });//forEach
