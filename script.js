@@ -57,57 +57,50 @@ c.classList.add('fade-out')
 
 
 //単語カード
-window.EnBtn=document.getElementById('EnBtn');
+window.TOEICBtn=document.getElementById('TOEICBtn');
+window.DraStoBtn=document.getElementById('DraStoBtn');
 window.DraBtn=document.getElementById('DraBtn');
-window.GerBtn=document.getElementById('GerBtn');
-window.SpaBtn=document.getElementById('SpaBtn');
-window.ItaBtn=document.getElementById('ItaBtn');
+
+
+
 window.createBtn=document.getElementById('createBtn');
 window.wordsStage=document.getElementById('wordsStage');
-window.langStatus=document.getElementById('langStatus');
+window.currentStatus=document.getElementById('currentStatus');
 window.delBtn=document.getElementById('delBtn');
 window.showAllBtn = document.getElementById('showAllBtn');
 
 
 
 
-let langArray = English;
+let deckArray = TOEIC;
 let shuffledArray =[];
 let currentIndex = 0;
-langStatus.textContent='English';
+currentStatus.textContent='TOEIC';
 
 
-function switchLang(arrayName,langName){
-  langArray = arrayName;
-  langStatus.textContent = langName;
+function switchLang(arrayName,showName){
+  deckArray = arrayName;
+  currentStatus.textContent = showName;
   shuffledArray = [];
   clearStage(wordsStage);
 }//switchLang
 
-EnBtn.addEventListener(
+TOEICBtn.addEventListener(
   'click', () => {
-    switchLang(English, 'English');
-  }); //EnBtn Event
+    switchLang(TOEIC, 'TOEIC');
+  }); //TOEICBtn Event
+  
+  DraStoBtn.addEventListener(
+  'click',()=>{
+    switchLang(DraculaStory, '🧛🏻‍♂️Story');
+  });//DraStoBtn Event
 
 DraBtn.addEventListener(
   'click',()=>{
-    switchLang(Dracula, 'Dracula');
+    switchLang(Dracula, '🧛🏻‍♂️Words');
   });//DraBtn Event
 
-GerBtn.addEventListener(
-  'click',()=>{
-    switchLang(German,'German');
-  });//GerBtn Event
 
-SpaBtn.addEventListener(
-  'click',()=>{
-    switchLang(Spanish,'Spanish');
-  });//SpaBtn Event
-
-  ItaBtn.addEventListener(
-  'click', () => {
-    switchLang(Italian,'Italian');
-  }); //ItaBtn Event
 
 
 function ShuffleArr(array){
@@ -129,7 +122,7 @@ createBtn.addEventListener(
   currentIndex++;
 
   if(shuffledArray.length===0 || currentIndex===shuffledArray.length){
-    shuffledArray = ShuffleArr(langArray);
+    shuffledArray = ShuffleArr(deckArray);
     currentIndex = 0;
   }//if
 
@@ -170,7 +163,7 @@ delBtn.addEventListener('click',()=>{
 showAllBtn.addEventListener('click',()=>{
   clearStage(wordsStage);
 
-  shuffledArray = ShuffleArr(langArray);
+  shuffledArray = ShuffleArr(deckArray);
 
 shuffledArray.forEach(OBJset => {
 
@@ -187,9 +180,13 @@ shuffledArray.forEach(OBJset => {
         OBJset.front;
 
       li.style.backgroundColor = isFlipped ?
-        '#300' :
-        '#030';
-        
+        '#200' :
+        '#020';
+      
+      li.style.border = isFlipped ? 'solid' : 'solid';
+      
+      li.style.borderColor = isFlipped ? '#500' : '#050';
+              
         
 });//li Event
   wordsStage.appendChild(li);
