@@ -1,6 +1,4 @@
-html { 
-      background:#111;
-      }
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -47,7 +45,11 @@ body{
     
 .spinner-back{
       position:fixed;
-      
+      height:100%;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       inset:0;
       background:transparent;
       z-index:0;
@@ -55,16 +57,16 @@ body{
 }
 .spinner{
       position:absolute;
-      display:flex;
       
       top:50%;
       left:50%;
       translate:-50% -50%;
+      white-space:nowrap;
       height:300px;
       width:200px;
       font-size:2rem;
       border-radius:50%;
-      animation: spin 10s linear infinite;
+      animation: spin 30s linear infinite;
       animation-play-state:paused;
 }
 @keyframes spin{
@@ -111,29 +113,26 @@ body.is-visible .spinner{ animation-play-state:running;
    #delBtn{
          color:#900;
    }
-    #wordsStage{
-          
-    }
+  
     .firstSight{
-          background:#030;
+          background:#020;
     }
-   #wordsStage li{
+   #wordsStage{
           display:flex;
           flex-direction:column;
           justify-content:space-between;
           align-items:center;
+          list-style: none;
+          margin-top:30px;
+          gap:30px;
+    }
+    #wordsStage li{
           padding:10px 5px;
-          margin:5px;
           font-size:2rem;
           color:#aa0;
           border-radius:10px;
-          list-style: none;
-          
     }
-    #wordsStage li:active{
-          border-color:#770;
-    }
-    
+   
     .stickyBar{
           display:flex;
           position:sticky;
