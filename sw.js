@@ -1,12 +1,10 @@
-const createCACHE = 'v22';
+const createCACHE = 'v23';
 const ASSETS = [
   './',
   './index.html',
   './words_en.js',
   './words_dra.js',
-  './words_ger.js',
-  './words_spa.js',
-  './words_ita.js',
+  './story_dra.js',
   './script.js',
   './style.css',
   './manifest.json',
